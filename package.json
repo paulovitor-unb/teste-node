@@ -1,0 +1,30 @@
+{
+    "name": "teste-node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "minio": "node ./libs/minio.js",
+        "dev-minio": "nodemon ./libs/minio.js",
+        "stripe": "node ./libs/stripe.js",
+        "dev-stripe": "nodemon ./libs/stripe.js",
+        "libphonenumber-js": "node ./libs/libphonenumber-js.js",
+        "dev-libphonenumber-js": "nodemon ./libs/libphonenumber-js.js"
+    },
+    "author": "Paulo Vitor dos Santos",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "formidable": "^3.5.0",
+        "libphonenumber-js": "^1.10.34",
+        "minio": "^7.1.1",
+        "stripe": "^12.12.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
+}
