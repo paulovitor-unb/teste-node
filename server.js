@@ -230,7 +230,7 @@ const downloadFileFromBucket = async (file, bucketName) => {
 app.get("/download", (req, res) => {
     res.status(200).send(`
         <img src="http://wild-lime-viper.cyclic.app/files?objectFilename=32bca714d46b65196547a3103+-+h1.png&mimetype=image%2Fpng" />
-        <a href="http://wild-lime-viper.cyclic.app/files?objectFilename=32bca714d46b65196547a3102+-+webhookBody.json&mimetype=application%2Fjson>JSON</a>
+        <a href="http://wild-lime-viper.cyclic.app/files?objectFilename=32bca714d46b65196547a3102+-+webhookBody.json&mimetype=application%2Fjson">JSON</a>
     `);
 });
 
