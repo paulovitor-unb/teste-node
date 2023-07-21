@@ -64,7 +64,10 @@ app.get("/upload", (req, res) => {
 });
 app.post("/apps", async (req, res, next) => {
     try {
+        const { protocol } = req;
         const { host } = req.headers;
+
+        const hostURL = `${protocol}://${host}`;
 
         const form = formidable({
             maxFieldsSize: 1 * 1024 * 1024,
@@ -84,7 +87,11 @@ app.post("/apps", async (req, res, next) => {
 
         const bucketName = await checkIfBucketExists();
 
-        const bucketFiles = await uploadFilesFromForm(files, bucketName, host);
+        const bucketFiles = await uploadFilesFromForm(
+            files,
+            bucketName,
+            hostURL
+        );
         req.body = { data: { ...fields, ...bucketFiles } };
 
         next();
@@ -222,8 +229,8 @@ const downloadFileFromBucket = async (file, bucketName) => {
 
 app.get("/download", (req, res) => {
     res.status(200).send(`
-        <img src="wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb701+-+h1.png&mimetype=image%2Fpng" />
-        <a href="wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb700+-+webhookBody.json&mimetype=application%2Fjson>JSON</a>
+        <img src="http://wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb701+-+h1.png&mimetype=image%2Fpng" />
+        <a href="http://wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb700+-+webhookBody.json&mimetype=application%2Fjson>JSON</a>
     `);
 });
 
