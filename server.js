@@ -222,9 +222,8 @@ const downloadFileFromBucket = async (file, bucketName) => {
 
 app.get("/download", (req, res) => {
     res.status(200).send(`
-        <img src="http://localhost:3331/files?objectFilename=08438bf184288927fe6d68201+-+h1.png&mimetype=image%2Fpng" />
-        <a href="http://localhost:3331/files?objectFilename=08438bf184288927fe6d68200+-+createApp.json&mimetype=application%2Fjson" target=_blank>JSON</a>
-        <a href="http://localhost:3331/files?objectFilename=08438bf184288927fe6d68202+-+User+Manual_Acer_1.0_A_A.pdf&mimetype=application%2Fpdf" target=_blank>PDF</a>
+        <img src="wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb701+-+h1.png&mimetype=image%2Fpng" />
+        <a href="wild-lime-viper.cyclic.app/files?objectFilename=9b2ae054a2ad5f3446bcbb700+-+webhookBody.json&mimetype=application%2Fjson>JSON</a>
     `);
 });
 
